@@ -1,0 +1,325 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- bootstrap css -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+	crossorigin="anonymous" />
+<!-- custom css -->
+<link href="{{ url_for('static', filename='css/main.css')}}"
+	rel="stylesheet" />
+<link rel="icon" href="favicon.ico" />
+<title>Job Prediction</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center mt-5 mb-5">
+			<div class="col-md-8">
+				<h2 class="text-center">Job Prediction</h2><br/>
+				<h3 class="text-center">Rating:&nbsp;1-Poor &nbsp;2-Good &nbsp;3-Very good &nbsp;4-Excellent</h3>
+				<form id="prediction-form-data" class="mt-5 mb-3" action="/prediction"  method = "POST">
+					<div class="mb-3 row">
+						<div class="col-md-3">
+						<label for="sslc" class="form-label">Computer Networks knowledge: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="sslc"
+								name="sslc" aria-describedby="sslc"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="hsc" class="form-label">Computer Security knowledge: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control"
+								id="hsc" name="hsc"
+								aria-describedby="hsc"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="cgpa" class="form-label">Project execution knowledge: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control"
+								id="cgpa" name="cgpa"
+								aria-describedby="cgpa"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="school_type" class="form-label">Design patterns knowledge: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control"
+								id="school_type" name="school_type"
+								aria-describedby="school_type"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="no_of_miniprojects" class="form-label">Coding skills: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="no_of_miniprojects"
+								name="no_of_miniprojects" aria-describedby="no_of_miniprojects"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="no_of_projects" class="form-label">Hackathons: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="no_of_projects"
+								name="no_of_projects" aria-describedby="no_of_projects"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="coresub_skill" class="form-label">Certifications: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control"
+								id="coresub_skill" name="coresub_skill"
+								aria-describedby="coresub_skill"
+								placeholder="Enter range 1-2" required min="1" max="2" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="aptitude_skill" class="form-label">Aptitude: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="aptitude_skill"
+								name="aptitude_skill" aria-describedby="aptitude_skill"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="problemsolving_skill" class="form-label">Problem solving skill:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control"
+								id="problemsolving_skill" name="problemsolving_skill"
+								aria-describedby="problemsolving_skill"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="programming_skill" class="form-label">Programming skills:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="programming_skill"
+								name="programming_skill" aria-describedby="programming_skill"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="abstractthink_skill" class="form-label">Data Analytics knowledge: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="abstractthink_skill"
+								name="abstractthink_skill" aria-describedby="abstractthink_skill"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="design_skill" class="form-label">Design thinking :</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="design_skill"
+								name="design_skill" aria-describedby="design_skill"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="first_computer" class="form-label">Data base knowledge:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="first_computer"
+								name="first_computer" aria-describedby="first_computer"
+								placeholder="Enter range 1-2" required min="1" max="2" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="first_program" class="form-label">Communication skills:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="first_program"
+								name="first_program" aria-describedby="first_program"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="lab_programs" class="form-label">Bid data knowledge: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="lab_programs"
+								name="lab_programs" aria-describedby="lab_programs"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="ds_coding" class="form-label">Data structures knowledge:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="ds_coding"
+								name="ds_coding" aria-describedby="ds_coding"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="technology_used	" class="form-label">Public speaking skill:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="technology_used"
+								name="technology_used" aria-describedby="technology_used"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="sympos_attend" class="form-label">Leadership skills:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="sympos_attend"
+								name="sympos_attend" aria-describedby="sympos_attend"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="sympos_won" class="form-label">Creativity skills: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="sympos_won"
+								name="sympos_won" aria-describedby="sympos_won"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="extracurricular" class="form-label">Project management knowledge:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="extracurricular"
+								name="extracurricular" aria-describedby="extracurricular"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="learning_style" class="form-label">Self learning skills:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="learning_style"
+								name="learning_style" aria-describedby="learning_style"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="college_bench" class="form-label">Technical skills:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="college_bench"
+								name="college_bench" aria-describedby="college_bench"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="clg_teachers_know" class="form-label">Team player rating: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="clg_teachers_know"
+								name="clg_teachers_know" aria-describedby="clg_teachers_know"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="college_performence" class="form-label">Self motivation rating:</label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="college_performence"
+								name="college_performence" aria-describedby="college_performence"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+
+					<div class="mb-3 row">
+						<div class="col-md-3">
+							<label for="college_skills" class="form-label">Application Integration knowledge: </label>
+						</div>
+						<div class="col-md-9">
+							<input type="number" class="form-control" id="college_skills"
+								name="college_skills" aria-describedby="college_skills"
+								placeholder="Enter range 1-4" required min="1" max="4" />
+						</div>
+					</div>
+					<div class="mt-3 text-center">
+						<button type="submit" class="btn btn-primary btn-lg mb-3">
+							Submit</button>
+					</div>
+
+                    {{result}}
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous"></script>
+	<!-- bootstrap js -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+		crossorigin="anonymous"></script>
+	<!-- custom js -->
+	<script src="{{ url_for('static', filename='scripts/main.js')}}"></script>
+</body>
+</html>

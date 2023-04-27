@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap");
+
+html,
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  word-spacing: 1px;
+  box-sizing: border-box;
+  background-color: #e4f9f5;
+  font-family: "Roboto", sans-serif;
+}
+
+/* job prediction / index */
+#prediction-form-data label {
+  font-weight: 500;
+  color: #212121;
+}
+/* .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color:#11cdd4;
+} */
+.btn-primary {
+    color: #212529;
+    background-color: #11cdd4;
+    border-color: #5bc2c2;
+     font-family: 'Montserrat', sans-serif;
+     color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+}
+
+.btn-primary:hover {
+    color: #212529;
+    background-color: #30e3cb;
+    border-color: #8ad3d3;
+    color: #ffffff;
+
+}
